@@ -2,6 +2,21 @@
   "name": "react-vite-template",
   "version": "0.0.0",
   "private": true,
+  "description": "Minimal, modern, opinionated React + Vite template with strict TypeScript, Tailwind CSS v4, Vitest, and Oxc tooling",
+  "keywords": [
+    "knip",
+    "oxfmt",
+    "oxlint",
+    "react",
+    "tailwindcss",
+    "template",
+    "vite",
+    "vitest"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gauurof/react-vite-template"
+  },
   "type": "module",
   "scripts": {
     "dev": "vite",
