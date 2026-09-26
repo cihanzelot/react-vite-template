@@ -19,25 +19,25 @@ A minimal, modern, opinionated React foundation. It gives you a small, working b
 - oxlint (type-aware) for linting and oxfmt for formatting
 - knip to detect unused files, exports, and dependencies
 - `@` path alias mapped to `src/` (Vite + tsconfig)
-- pnpm with Node 24.x support and pnpm 12.4.2 pinned (`engines` + `engine-strict`)
+- pnpm with Node 24.x support and pnpm 12.6.0 pinned (`engines` + `engine-strict`)
 - GitHub Actions CI running lint, format, typecheck, tests (with enforced coverage), dead-code detection (knip), and build as parallel jobs
 
 ## 🛠 Tech stack
 
 | Technology                | Version            | Purpose                           |
 | ------------------------- | ------------------ | --------------------------------- |
-| React / react-dom         | ^19.2.8            | UI library                        |
-| Vite                      | ^8.2.2             | Dev server and build tool         |
+| React / react-dom         | ^19.3.0            | UI library                        |
+| Vite                      | ^8.3.1             | Dev server and build tool         |
 | TypeScript                | ^7.0.2             | Type safety (`strict: true`)      |
 | Tailwind CSS              | ^4.3.3             | Styling                           |
-| Vitest                    | ^5.0.0             | Unit testing                      |
-| happy-dom                 | ^20.14.0           | Browser environment for tests     |
+| Vitest                    | ^5.0.2             | Unit testing                      |
+| happy-dom                 | ^20.14.5           | Browser environment for tests     |
 | @testing-library/react    | ^16.3.3            | Component testing helpers         |
 | @testing-library/jest-dom | ^7.0.1             | DOM matchers for Vitest           |
-| oxlint                    | ^1.81.0            | Linting (type-aware)              |
-| oxfmt                     | ^0.66.0            | Code formatting                   |
-| knip                      | ^6.34.0            | Unused files/exports/dependencies |
-| pnpm                      | 12.4.2 (pinned)    | Package manager                   |
+| oxlint                    | ^1.85.0            | Linting (type-aware)              |
+| oxfmt                     | ^0.70.0            | Code formatting                   |
+| knip                      | ^6.38.0            | Unused files/exports/dependencies |
+| pnpm                      | 12.6.0 (pinned)    | Package manager                   |
 | Node.js                   | 24.x (any Node 24) | Runtime                           |
 
 ## ✅ What's included?
@@ -72,7 +72,7 @@ These are deliberately omitted to keep the foundation small. A minimal baseline 
 Prerequisites:
 
 - Node.js **24.x** (any Node 24; major version pinned in `.nvmrc` and `engines.node`)
-- pnpm **12.4.2** (pinned via `packageManager` in `package.json`)
+- pnpm **12.6.0** (pinned via `packageManager` in `package.json`)
 
 Corepack is bundled with Node.js 24 but disabled by default (since Node 23). Enable it to get the pinned pnpm version automatically:
 
@@ -82,7 +82,7 @@ pnpm install
 pnpm run dev
 ```
 
-If you would rather not use Corepack, install the pinned pnpm version directly instead: `npm install -g pnpm@12.4.2`.
+If you would rather not use Corepack, install the pinned pnpm version directly instead: `npm install -g pnpm@12.6.0`.
 
 The dev server is available at `http://localhost:5173`.
 
