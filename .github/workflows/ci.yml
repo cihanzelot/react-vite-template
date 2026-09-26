@@ -15,7 +15,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        command: [lint, "format:check", typecheck, "test:coverage", build]
+        command: [lint, "format:check", typecheck, "test:coverage", knip, build]
     steps:
       - uses: actions/checkout@v4
 
