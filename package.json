@@ -13,6 +13,7 @@
     "vite",
     "vitest"
   ],
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/gauurof/react-vite-template"
