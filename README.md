@@ -5,7 +5,7 @@ A minimal, modern, opinionated React foundation. It gives you a small, working b
 ## 💡 Why this template?
 
 - **Small by design.** The baseline contains only what every project needs to run, test, and build. Everything else is yours to add when (and if) your app needs it.
-- **Opinionated defaults.** Strict TypeScript, type-aware linting, pinned toolchain versions, and a single `pnpm check` command that covers lint, format, types, tests, and dead-code detection.
+- **Opinionated defaults.** Strict TypeScript, type-aware linting, pinned toolchain versions, and a single `pnpm check` command that covers lint, format, types, tests, and dead-code detection — with `pnpm check:ci` adding the coverage gate to match what CI runs.
 - **Fast tooling.** The Oxc toolchain (oxlint + oxfmt) replaces the slower ESLint + Prettier setup, and Vite provides instant dev-server startup.
 - **Easy to adopt.** Fork it, rename it, replace `src/App.tsx`, and start building.
 
@@ -20,7 +20,7 @@ A minimal, modern, opinionated React foundation. It gives you a small, working b
 - knip to detect unused files, exports, and dependencies
 - `@` path alias mapped to `src/` (Vite + tsconfig)
 - pnpm with Node 24.x support and pnpm 12.6.0 pinned (`engines` + `engine-strict`)
-- GitHub Actions CI running lint, format, typecheck, tests (with enforced coverage), dead-code detection (knip), and build as parallel jobs
+- GitHub Actions CI running lint, format check, tests (with enforced coverage), dead-code detection (knip), and a type-checked build as parallel jobs
 
 ## 🛠 Tech stack
 
@@ -109,6 +109,7 @@ If you prefer npm, you can switch package managers, but this template is tested 
 | `pnpm run build`         | Type-check (`tsc -b`) and build for production into `dist/`                                                                  |
 | `pnpm run preview`       | Serve the production build locally                                                                                           |
 | `pnpm run check`         | Run lint, format check, typecheck, tests, and knip                                                                           |
+| `pnpm run check:ci`      | Full quality gate with coverage (lint, format, types, tests with coverage, knip) — matches what CI runs                      |
 | `pnpm run lint`          | Lint all project TypeScript files with oxlint (`src/` + config files; `node_modules`/`dist` ignored)                         |
 | `pnpm run lint:fix`      | Lint all project TypeScript files with oxlint and auto-fix                                                                   |
 | `pnpm run format`        | Format all project files with oxfmt (`node_modules`/`dist` ignored)                                                          |
@@ -121,7 +122,7 @@ If you prefer npm, you can switch package managers, but this template is tested 
 
 ## 🧪 Testing
 
-- **Vitest** runs in the **happy-dom** environment
+- **Vitest** runs in the **happy-dom** environment (chosen for speed over `jsdom`; if a library needs richer browser behavior — e.g. certain media or canvas APIs — switch to `jsdom` with `pnpm add -D jsdom` and `environment: "jsdom"` in `vitest.config.ts`)
 - **@testing-library/react** for rendering and querying components
 - **@testing-library/jest-dom** adds DOM matchers (loaded via `src/test/setup.ts`, which also runs `cleanup` after each test)
 - Coverage is enforced with `pnpm run test:coverage` — minimum thresholds (statements, branches, functions, lines) are set in `vitest.config.ts` and the run fails when they are not met
@@ -144,10 +145,11 @@ Both `knip.json` and `.oxfmtrc.json` are intentionally empty — knip and oxfmt 
 
 TypeScript runs in `strict` mode with additional strictness flags (`noUncheckedIndexedAccess`, `exactOptionalPropertyTypes`, `noImplicitOverride`, ...) in `tsconfig.app.json`.
 
-Run everything at once:
+Run all at once:
 
 ```bash
-pnpm run check
+pnpm run check        # fast gate (no coverage): lint, format, types, tests, knip
+pnpm run check:ci     # full gate with coverage — matches what CI runs
 ```
 
 ## 📁 Project structure
@@ -189,7 +191,7 @@ Organize `src/` however your app needs — the template only requires that entry
 1. Rename the package (`name` in `package.json`) and update the title/description in `index.html`.
 2. Replace `src/App.tsx` with your application.
 3. Add libraries with `pnpm add <package>` when your app needs them (routing, state management, data fetching, UI, E2E, etc.).
-4. Keep `pnpm check` green as you grow the codebase.
+4. Keep `pnpm check` green locally and `pnpm check:ci` green before pushing (this is what CI runs).
 
 ## 🔄 Updating dependencies
 
