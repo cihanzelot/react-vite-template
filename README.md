@@ -5,7 +5,7 @@ A minimal, modern, opinionated React foundation. It gives you a small, working b
 ## 💡 Why this template?
 
 - **Small by design.** The baseline contains only what every project needs to run, test, and build. Everything else is yours to add when (and if) your app needs it.
-- **Opinionated defaults.** Strict TypeScript, type-aware linting, pinned toolchain versions, and a single `pnpm check` command that covers lint, format, types, tests, and dead-code detection — with `pnpm check:ci` adding the coverage gate to match what CI runs.
+- **Opinionated defaults.** Strict TypeScript, type-aware linting, reproducible toolchain versions locked by the committed `pnpm-lock.yaml`, and a single `pnpm check` command that covers lint, format, types, tests, and dead-code detection — with `pnpm check:ci` adding the coverage gate to match what CI runs.
 - **Fast tooling.** The Oxc toolchain (oxlint + oxfmt) replaces the slower ESLint + Prettier setup, and Vite provides instant dev-server startup.
 - **Easy to adopt.** Fork it, rename it, replace `src/App.tsx`, and start building.
 
@@ -24,21 +24,23 @@ A minimal, modern, opinionated React foundation. It gives you a small, working b
 
 ## 🛠 Tech stack
 
-| Technology                | Version            | Purpose                           |
-| ------------------------- | ------------------ | --------------------------------- |
-| React / react-dom         | ^19.3.0            | UI library                        |
-| Vite                      | ^8.3.1             | Dev server and build tool         |
-| TypeScript                | ^7.0.2             | Type safety (`strict: true`)      |
-| Tailwind CSS              | ^4.3.3             | Styling                           |
-| Vitest                    | ^5.0.2             | Unit testing                      |
-| happy-dom                 | ^20.14.5           | Browser environment for tests     |
-| @testing-library/react    | ^16.3.3            | Component testing helpers         |
-| @testing-library/jest-dom | ^7.0.1             | DOM matchers for Vitest           |
-| oxlint                    | ^1.85.0            | Linting (type-aware)              |
-| oxfmt                     | ^0.70.0            | Code formatting                   |
-| knip                      | ^6.38.0            | Unused files/exports/dependencies |
-| pnpm                      | 12.6.0 (pinned)    | Package manager                   |
-| Node.js                   | 24.x (any Node 24) | Runtime                           |
+| Technology                | Purpose                           |
+| ------------------------- | --------------------------------- |
+| React / react-dom         | UI library                        |
+| Vite                      | Dev server and build tool         |
+| TypeScript                | Type safety (`strict: true`)      |
+| Tailwind CSS              | Styling                           |
+| Vitest                    | Unit testing                      |
+| happy-dom                 | Browser environment for tests     |
+| @testing-library/react    | Component testing helpers         |
+| @testing-library/jest-dom | DOM matchers for Vitest           |
+| oxlint                    | Linting (type-aware)              |
+| oxfmt                     | Code formatting                   |
+| knip                      | Unused files/exports/dependencies |
+| pnpm                      | Package manager                   |
+| Node.js                   | Runtime                           |
+
+Exact installed versions are locked in `pnpm-lock.yaml`; the semver ranges in `package.json` allow compatible updates.
 
 ## ✅ What's included?
 
@@ -99,7 +101,7 @@ This template uses pnpm instead of npm for three reasons:
 - **Strict dependency model** — only explicitly declared dependencies are reachable from your code, which prevents silently relying on transitive ("phantom") packages.
 - **Consistency** — the pnpm version is pinned via the `packageManager` field in `package.json` (picked up automatically by Corepack) and `engines`, so local development and CI always use the same version.
 
-If you prefer npm, you can switch package managers, but this template is tested and maintained with pnpm.
+This template uses pnpm 12.6.0 and the repository is tested with pnpm. Switching to a different package manager is up to you, but pnpm is the supported one.
 
 ## ⌨️ Available commands
 
@@ -143,7 +145,7 @@ The template uses the **Oxc** toolchain instead of ESLint + Prettier:
 
 Both `knip.json` and `.oxfmtrc.json` are intentionally empty — knip and oxfmt run with their sensible defaults.
 
-TypeScript runs in `strict` mode with additional strictness flags (`noUncheckedIndexedAccess`, `exactOptionalPropertyTypes`, `noImplicitOverride`, ...) in `tsconfig.app.json`.
+TypeScript runs in `strict` mode with additional strictness flags in the solution: `noUnusedLocals` and `noUnusedParameters` in `tsconfig.base.json`, plus `noUncheckedIndexedAccess`, `exactOptionalPropertyTypes`, `noImplicitOverride`, `noImplicitReturns`, and `noFallthroughCasesInSwitch` in `tsconfig.app.json`.
 
 Run all at once:
 
