@@ -1,6 +1,6 @@
 {
   "name": "react-vite-template",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "private": true,
   "description": "Minimal, modern, opinionated React + Vite template with strict TypeScript, Tailwind CSS v4, Vitest, and Oxc tooling",
   "keywords": [
@@ -23,6 +23,7 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "check": "pnpm lint && pnpm format:check && pnpm typecheck && pnpm test && pnpm knip",
+    "check:ci": "pnpm lint && pnpm format:check && pnpm typecheck && pnpm test:coverage && pnpm knip",
     "lint": "oxlint .",
     "lint:fix": "oxlint . --fix",
     "format": "oxfmt .",
