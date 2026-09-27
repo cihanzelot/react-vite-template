@@ -140,6 +140,8 @@ The template uses the **Oxc** toolchain instead of ESLint + Prettier:
 - **oxfmt** — code formatting (see `.oxfmtrc.json`)
 - **knip** — detects unused files, exports, dependencies, and devDependencies
 
+Both `knip.json` and `.oxfmtrc.json` are intentionally empty — knip and oxfmt run with their sensible defaults.
+
 TypeScript runs in `strict` mode with additional strictness flags (`noUncheckedIndexedAccess`, `exactOptionalPropertyTypes`, `noImplicitOverride`, ...) in `tsconfig.app.json`.
 
 Run everything at once:
