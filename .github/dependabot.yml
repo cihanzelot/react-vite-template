@@ -23,9 +23,6 @@ updates:
         patterns:
           - "vitest"
           - "@vitest/coverage-v8"
-    security-updates:
-      enable: true
-      schedule: "daily"
     # Major versions are deliberate decisions: dependabot only bumps within
     # the current major (minors, patches, and security fixes). Major upgrades
     # are done manually in chore/ branches.
