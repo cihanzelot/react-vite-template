@@ -49,7 +49,7 @@ Exact installed versions are locked in `pnpm-lock.yaml`; the semver ranges in `p
 - Build/test config: `vite.config.ts`, `vitest.config.ts`, solution-style `tsconfig.json` (references `tsconfig.app.json` + `tsconfig.node.json`)
 - Tooling config: `.oxlintrc.json`, `.oxfmtrc.json`, `knip.json`
 - Environment pinning: `.nvmrc`, `.npmrc` (`engine-strict=true`), `packageManager` field
-- GitHub Actions workflow (`.github/workflows/ci.yml`)
+- GitHub Actions workflow (`.github/workflows/ci.yml`) and Dependabot config (`.github/dependabot.yml`)
 - Editor and editor experience: `.editorconfig`, `.vscode/settings.json`, `.vscode/extensions.json` (recommended: Tailwind CSS IntelliSense, Vitest, EditorConfig, Oxc)
 - `LICENSE` (MIT) and a `public/` folder with `favicon.svg`
 
@@ -199,6 +199,7 @@ Organize `src/` however your app needs — the template only requires that entry
 
 - `pnpm update` — update dependencies within their semver ranges
 - `pnpm update --latest` — jump to the latest major versions, then review breaking changes
+- Dependabot handles **minor/patch** updates weekly and security patches daily (`.github/dependabot.yml`); major versions are bumped by hand in `chore/` branches
 - The Node.js major version (24.x) and the pnpm version are pinned in `engines`, `.nvmrc`, and the `packageManager` field. To change them, update all three together; Corepack will pick up the new pnpm version from `packageManager`.
 
 ## 📄 License
