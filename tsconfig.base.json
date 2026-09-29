@@ -2,6 +2,7 @@
   "compilerOptions": {
     "target": "ES2022",
     "module": "ESNext",
+    "forceConsistentCasingInFileNames": true,
     "moduleResolution": "bundler",
     "strict": true,
     "noUnusedLocals": true,
