@@ -20,7 +20,7 @@ A minimal, modern, opinionated React foundation. It gives you a small, working b
 - knip to detect unused files, exports, and dependencies
 - `@` path alias mapped to `src/` (Vite + tsconfig)
 - pnpm with Node 24.x support and pnpm 12.6.0 pinned (`engines` + `engine-strict`)
-- GitHub Actions CI running lint, format check, tests (with enforced coverage), dead-code detection (knip), and a type-checked build as parallel jobs
+- GitHub Actions CI running lint, format check, types, tests (with enforced coverage), dead-code detection (knip), and a production build as a single job
 
 ## 🛠 Tech stack
 
@@ -108,7 +108,7 @@ This template uses pnpm 12.6.0 and the repository is tested with pnpm. Switching
 | Command                  | Description                                                                                                                  |
 | ------------------------ | ---------------------------------------------------------------------------------------------------------------------------- |
 | `pnpm run dev`           | Start the Vite dev server                                                                                                    |
-| `pnpm run build`         | Type-check (`tsc -b`) and build for production into `dist/`                                                                  |
+| `pnpm run build`         | Build for production into `dist/`                                                                                            |
 | `pnpm run preview`       | Serve the production build locally                                                                                           |
 | `pnpm run check`         | Run lint, format check, typecheck, tests, and knip                                                                           |
 | `pnpm run check:ci`      | Full quality gate with coverage (lint, format, types, tests with coverage, knip) — matches what CI runs                      |
@@ -160,7 +160,7 @@ pnpm run check:ci     # full gate with coverage — matches what CI runs
 .
 ├── .github/
 │   └── workflows/
-│       └── ci.yml             # GitHub Actions: parallel check + build jobs
+│       └── ci.yml             # GitHub Actions: single job running the CI check + build
 ├── public/
 │   └── favicon.svg            # Static assets
 ├── src/
