@@ -4,14 +4,9 @@
   "private": true,
   "description": "Minimal, modern, opinionated React + Vite template with strict TypeScript, Tailwind CSS v4, Vitest, and Oxc tooling",
   "keywords": [
-    "knip",
-    "oxfmt",
-    "oxlint",
     "react",
-    "tailwindcss",
     "template",
-    "vite",
-    "vitest"
+    "vite"
   ],
   "license": "MIT",
   "repository": {
@@ -21,7 +16,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "vite build",
     "check": "pnpm lint && pnpm format:check && pnpm typecheck && pnpm test && pnpm knip",
     "check:ci": "pnpm lint && pnpm format:check && pnpm typecheck && pnpm test:coverage && pnpm knip",
     "lint": "oxlint .",
