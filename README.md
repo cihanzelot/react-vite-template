@@ -19,7 +19,7 @@ A minimal, modern, opinionated React foundation. It gives you a small, working b
 - oxlint (type-aware) for linting and oxfmt for formatting
 - knip to detect unused files, exports, and dependencies
 - `@` path alias mapped to `src/` (Vite + tsconfig)
-- pnpm with Node 24.x support and pnpm 12.6.0 pinned (`engines` + `engine-strict`)
+- pnpm with Node 24.x support and pnpm 12.8.2 pinned (`engines` + `engine-strict`)
 - GitHub Actions CI running lint, format check, types, tests (with enforced coverage), dead-code detection (knip), and a production build as a single job
 
 ## 🛠 Tech stack
@@ -74,7 +74,7 @@ These are deliberately omitted to keep the foundation small. A minimal baseline 
 Prerequisites:
 
 - Node.js **24.x** (any Node 24; major version pinned in `.nvmrc` and `engines.node`)
-- pnpm **12.6.0** (pinned via `packageManager` in `package.json`)
+- pnpm **12.8.2** (pinned via `packageManager` in `package.json`)
 
 Corepack is bundled with Node.js 24 but disabled by default (since Node 23). Enable it to get the pinned pnpm version automatically:
 
@@ -84,7 +84,7 @@ pnpm install
 pnpm run dev
 ```
 
-If you would rather not use Corepack, install the pinned pnpm version directly instead: `npm install -g pnpm@12.6.0`.
+If you would rather not use Corepack, install the pinned pnpm version directly instead: `npm install -g pnpm@12.8.2`.
 
 The dev server is available at `http://localhost:5173`.
 
@@ -101,7 +101,7 @@ This template uses pnpm instead of npm for three reasons:
 - **Strict dependency model** — only explicitly declared dependencies are reachable from your code, which prevents silently relying on transitive ("phantom") packages.
 - **Consistency** — the pnpm version is pinned via the `packageManager` field in `package.json` (picked up automatically by Corepack) and `engines`, so local development and CI always use the same version.
 
-This template uses pnpm 12.6.0 and the repository is tested with pnpm. Switching to a different package manager is up to you, but pnpm is the supported one.
+This template uses pnpm 12.8.2 and the repository is tested with pnpm. Switching to a different package manager is up to you, but pnpm is the supported one.
 
 ## ⌨️ Available commands
 
