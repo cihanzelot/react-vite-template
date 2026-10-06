@@ -9,6 +9,7 @@
     "noUnusedParameters": true,
     "noEmit": true,
     "allowImportingTsExtensions": true,
+    "erasableSyntaxOnly": true,
     "skipLibCheck": true
   }
 }

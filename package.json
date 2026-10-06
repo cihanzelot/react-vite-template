@@ -18,7 +18,7 @@
     "dev": "vite",
     "build": "vite build",
     "check": "pnpm lint && pnpm format:check && pnpm typecheck && pnpm test && pnpm knip",
-    "check:ci": "pnpm lint && pnpm format:check && pnpm typecheck && pnpm test:coverage && pnpm knip",
+    "check:ci": "pnpm lint && pnpm format:check && pnpm typecheck && pnpm test:coverage && pnpm knip && pnpm build",
     "lint": "oxlint .",
     "lint:fix": "oxlint . --fix",
     "format": "oxfmt .",

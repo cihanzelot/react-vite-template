@@ -5,7 +5,7 @@ A minimal, modern, opinionated React foundation. It gives you a small, working b
 ## 💡 Why this template?
 
 - **Small by design.** The baseline contains only what every project needs to run, test, and build. Everything else is yours to add when (and if) your app needs it.
-- **Opinionated defaults.** Strict TypeScript, type-aware linting, reproducible toolchain versions locked by the committed `pnpm-lock.yaml`, and a single `pnpm check` command that covers lint, format, types, tests, and dead-code detection — with `pnpm check:ci` adding the coverage gate to match what CI runs.
+- **Opinionated defaults.** Strict TypeScript, type-aware linting, reproducible toolchain versions locked by the committed `pnpm-lock.yaml`, and a single `pnpm check` command that covers lint, format, types, tests, and dead-code detection — with `pnpm check:ci` adding the coverage gate and a production build to match what CI runs.
 - **Fast tooling.** The Oxc toolchain (oxlint + oxfmt) replaces the slower ESLint + Prettier setup, and Vite provides instant dev-server startup.
 - **Easy to adopt.** Fork it, rename it, replace `src/App.tsx`, and start building.
 
@@ -111,7 +111,7 @@ This template uses pnpm 12.8.2 and the repository is tested with pnpm. Switching
 | `pnpm run build`         | Build for production into `dist/`                                                                                            |
 | `pnpm run preview`       | Serve the production build locally                                                                                           |
 | `pnpm run check`         | Run lint, format check, typecheck, tests, and knip                                                                           |
-| `pnpm run check:ci`      | Full quality gate with coverage (lint, format, types, tests with coverage, knip) — matches what CI runs                      |
+| `pnpm run check:ci`      | Full quality gate with coverage (lint, format, types, tests with coverage, knip, build) — matches what CI runs               |
 | `pnpm run lint`          | Lint all project TypeScript files with oxlint (`src/` + config files; `node_modules`/`dist` ignored)                         |
 | `pnpm run lint:fix`      | Lint all project TypeScript files with oxlint and auto-fix                                                                   |
 | `pnpm run format`        | Format all project files with oxfmt (`node_modules`/`dist` ignored)                                                          |
@@ -151,7 +151,7 @@ Run all at once:
 
 ```bash
 pnpm run check        # fast gate (no coverage): lint, format, types, tests, knip
-pnpm run check:ci     # full gate with coverage — matches what CI runs
+pnpm run check:ci     # full gate with coverage + build — matches what CI runs
 ```
 
 ## 📁 Project structure
