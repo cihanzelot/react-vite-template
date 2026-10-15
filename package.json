@@ -55,7 +55,7 @@
   },
   "engines": {
     "node": "24.x",
-    "pnpm": "=12.8.2"
+    "pnpm": "=12.11.2"
   },
-  "packageManager": "pnpm@12.8.2"
+  "packageManager": "pnpm@12.11.2"
 }
